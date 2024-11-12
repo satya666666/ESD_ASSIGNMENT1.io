@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yummy - Food Ordering</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff4d4d;
+            --yellow-bg: #ffc107;
+        }
+
+        .navbar-brand {
+            color: var(--primary-color) !important;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/api/placeholder/1200/800');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .order-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 500;
+        }
+
+        .order-btn:hover {
+            background-color: #ff3333;
+            color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 3rem 0;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .food-card {
+            background-color: var(--yellow-bg);
+            border-radius: 15px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .food-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .food-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .food-description {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .food-card .price {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .add-to-cart {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            width: 100%;
+        }
+
+        .add-to-cart:hover {
+            background-color: #ff3333;
+            color: white;
+        }
+
+        .footer {
+            background-color: var(--yellow-bg);
+            padding: 1rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+    .row .col-md-3:nth-child(-n+4) {
+        margin-bottom: 3rem;
+    }
+
+    .row .col-md-3:nth-child(n+5):nth-child(-n+8) {
+        margin-bottom: 2rem;
+    }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Yummy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">CART</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">PROFILE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup.html">LOGIN</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>It's not just food it's an Experience!</h1>
+                <p>The best delicious food that meet your needs, order now</p>
+                <button class="order-btn">Order Now <i class="fas fa-arrow-right ms-2"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Menu Section -->
+    <section class="container">
+        <h2 class="section-title">Order Fresh Food</h2>
+        <div class="row">
+            <!-- Masala Dosa -->
+            <div class="col-md-3 col-sm-6">
+                <div class="food-card">
+                    <img src="images/masala-dosa.jpg" alt="Masala Dosa">
+                    <h3>Masala Dosa</h3>
+                    <div class="food-description">
+                        Crispy, golden fermented crepe made from rice batter and black lentils, stuffed with spiced mashed potatoes. Served with coconut chutney and sambar.
+                    </div>
+                    <p class="price">₹80</p>
+                    <button class="add-to-cart">Add to Cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                </div>
+            </div>
+            <!-- Manchurian -->
+            <div class="col-md-3 col-sm-6">
+                <div class="food-card">
+                    <img src="images/manchurian.jpg" alt="Manchurian">
+                    <h3>Manchurian</h3>
+                    <div class="food-description">
+                        Deep-fried vegetable balls tossed in a spicy, sweet, and tangy sauce with garlic, ginger, and soy sauce. A perfect Indo-Chinese fusion dish.
+                    </div>
+                    <p class="price">₹180</p>
+                    <button class="add-to-cart">Add to Cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                </div>
+            </div>
+            <!-- Steamed Idli -->
+            <div class="col-md-3 col-sm-6">
+                <div class="food-card">
+                  <img src="images/steamed-idli.jpg" alt="Steamed Idli">
+                    <h3>Steamed Idli</h3>
+                    <div class="food-description">
+                        Soft, fluffy steamed rice cakes made from fermented rice and urad dal batter. Served with fresh coconut chutney and piping hot sambar.
+                    </div>
+                    <p class="price">₹40</p>
+                    <button class="add-to-cart">Add to Cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                </div>
+            </div>
+            <!-- Bolognese -->
+            <div class="col-md-3 col-sm-6">
+                <div class="food-card">
+                    <img src="images/bolognese.jpeg" alt="Bolognese">
+                    <h3>Bolognese</h3>
+                    <div class="food-description">
+                        Classic Italian pasta dish with rich meat sauce, perfectly cooked spaghetti, and topped with freshly grated Parmesan cheese and herbs.
+                    </div>
+                    <p class="price">₹225</p>
+                    <button class="add-to-cart">Add to Cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                </div>
+            </div>
+            <!-- Burger Combo -->
+            <div class="col-md-3 col-sm-6">
+                <div class="food-card">
+                    <img src="images/burger-combo.jpeg" alt="Burger Combo">
+                    <h3>Burger Combo</h3>
+                    <div class="food-description">
+                        Juicy beef patty with melted cheese, fresh lettuce, tomatoes, and special sauce. Served with crispy fries and a refreshing drink.
+                    </div>
+                    <p class="price">₹199</p>
+                    <button class="add-to-cart">Add to Cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                </div>
+            </div>
+            <!-- Veg Samosa -->
+            <div class="col-md-3 col-sm-6">
+                <div class="food-card">
+                    <img src="images/veg-samosa.jpg" alt="Veg Samosa">
+                    <h3>Veg Samosa</h3>
+                    <div class="food-description">
+                        Crispy pastry filled with spiced potatoes, peas, and aromatic Indian spices. Served with mint chutney and tamarind sauce.
+                    </div>
+                    <p class="price">₹60</p>
+                    <button class="add-to-cart">Add to Cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                </div>
+            </div>
+            <!-- Hakka Noodles -->
+            <div class="col-md-3 col-sm-6">
+                <div class="food-card">
+                    <img src="images/hakka-noodles.jpeg" alt="Hakka Noodles">
+                    <h3>Hakka Noodles</h3>
+                    <div class="food-description">
+                        Stir-fried noodles with crunchy vegetables in a flavorful soy-based sauce. A popular Indo-Chinese dish with perfect wok hei.
+                    </div>
+                    <p class="price">₹140</p>
+                    <button class="add-to-cart">Add to Cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                </div>
+            </div>
+            <!-- Special Pizza -->
+            <div class="col-md-3 col-sm-6">
+                <div class="food-card">
+                    <img src="images/special-pizza.jpeg" alt="Special Pizza">
+                    <h3>Special Pizza</h3>
+                    <div class="food-description">
+                        Hand-tossed pizza loaded with mozzarella, fresh vegetables, Italian herbs, and our secret sauce. Baked to perfection in a stone oven.
+                    </div>
+                    <p class="price">₹229</p>
+                    <button class="add-to-cart">Add to Cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 Yummy - All rights reserved</p>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
